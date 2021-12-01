@@ -1,13 +1,20 @@
 <template>
-  <!--vue2.0需要根元素，vue3可以是代码片段framement-->
-  <h2>{{$store.state.user.profile.account}}</h2>
-  <button @click="$store.commit('user/setUser',{account:'666'})">修改用户信息</button>
- <div>
-   app
- </div>
-
+  <button @click="fn">修改用户信息</button>
 </template>
 
+<script>
+import request from '@/utils/request.js'
+export default {
+  name: 'App',
+  setup () {
+    const fn = () => {
+      request('/member/profile', 'get')
+    }
+    return { fn }
+  }
+}
+
+</script>
 <style lang="less">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

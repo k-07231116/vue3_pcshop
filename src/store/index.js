@@ -5,8 +5,6 @@ import cart from './modules/cart'
 import user from './modules/user'
 import category from './modules/category'
 
-// vue2.0创建仓库new Vuex({})
-// vue3.0 createStore
 export default createStore({
   modules: {
     cart,
